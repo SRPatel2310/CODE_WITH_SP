@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN FORM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <h1>SIGN IN</h1>
+      </div>
+      <form action="" onsubmit="return validation()">
+        <div class="input">
+          <input type="text" id="Username" placeholder="Username" />
+          <p id="userError"></p>
+          <input type="password" id="password" placeholder="Password" />
+          <p id="passError"></p>
+        </div>
+
+        <div class="forgot">
+          <p><a href="/Forgot_Password.html">Forgot Password</a></p>
+          <a href="/LOGIN-PAGE/Register.html" id="signup">Signup</a>
+        </div>
+        <button>login</button>
+      </form>
+    </div>
+
+    <script>
+      let Username = document.getElementById("Username");
+      let Password = document.getElementById("password");
+
+      function validation() {
+        let valid = false;
+
+        //****Username validation****
+        if (Username.value === "") {
+          document.getElementById("userError").innerHTML = "Username is empty";
+        } else if (Username.value.length < 3) {
+          document.getElementById("userError").innerHTML =
+            "Username requires at least 3 characters";
+        } else {
+          document.getElementById("userError").innerHTML = "";
+        }
+
+        //****Password validation****
+
+        if (Password.value === "") {
+          document.getElementById("passError").innerHTML = "Password is empty";
+        } else if (Password.value.length < 3) {
+          document.getElementById("passError").innerHTML =
+            "Password requires at least 3 characters";
+        } else {
+          document.getElementById("passError").innerHTML = "";
+        }
+
+        return valid;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://png.pngtree.com/background/20211217/original/pngtree-neon-grid--metaverse-meta--background-picture-image_1594916.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    width: 25%;
+    height: 60%;
+    background-color:#1b263b;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.header{
+    text-align: center;
+    padding-top: 10%;
+    color: #70e000;
+    margin-bottom: 20px;
+ 
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.input>p{
+    align-self: flex-start;
+    color: red;
+    padding-left: 33px;
+    padding-right: 20px;
+}
+
+input{
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: none ;
+
+}
+.forgot{
+    color: white;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+}.forgot>p>a{
+    color: white;
+    text-decoration: none;
+}
+#signup{
+    color: #70e000;
+    text-decoration: none;
+}
+button{
+    background-color:#70e000;
+    width: 80%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: 10%;
+    margin-top:15px;
+    text-transform: capitalize;
+  font-size: 15px;
+}
+

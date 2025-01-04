@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register form</title>
+    <link rel="stylesheet" href="Register.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <h1>Signup</h1>
+      </div>
+      <form action="" onsubmit="return validation()">
+        <div class="input">
+          <input type="text" id="Username" placeholder="Username" />
+          <p id="userError"></p>
+          <input type="email" id="email" placeholder="Email" />
+          <p id="emailError"></p>
+          <input
+            type="password"
+            id="password"
+            placeholder="Create Password"
+            required
+          />
+          <p id="passError"></p>
+          <input type="password" id="password1" placeholder=" Password" />
+          <p id="pass1Error"></p>
+        </div>
+
+        <div class="forgot">
+          <p>
+            Aleary Signup here!
+            <a href="/LOGIN-PAGE/LOGIN.HTML" id="signup">Signin</a>
+          </p>
+        </div>
+        <button>Create Account</button>
+      </form>
+    </div>
+
+    <script>
+      let Username = document.getElementById("Username");
+      let Password = document.getElementById("password");
+      let Password1 = document.getElementById("password1");
+      let Email = document.getElementById("email");
+
+      function validation() {
+        let valid = false;
+
+        //****Username validation****
+        if (Username.value === "") {
+          document.getElementById("userError").innerHTML = "Username is empty";
+        } else if (Username.value.length < 3) {
+          document.getElementById("userError").innerHTML =
+            "Username requires at least 3 characters";
+        } else {
+          document.getElementById("userError").innerHTML = "";
+        }
+
+        //****Email validation******
+
+        if (Email.value === "") {
+          document.getElementById("emailError").innerHTML = "Email is empty";
+        }
+        //**** Create Password validation****
+
+        if (Password.value.length < 3) {
+          document.getElementById("passError").innerHTML =
+            "Password requires at least 3 characters";
+        } else {
+          document.getElementById("passError").innerHTML = "";
+        }
+        // ****Password validation ******
+        if (Password1.value === "") {
+          document.getElementById("pass1Error").innerHTML = "Password is empty";
+        } else if (Password1.value == Password.value) {
+          document.getElementById("pass1Error").innerHTML = "";
+        } else {
+          document.getElementById("pass1Error").innerHTML = "Password Wrong";
+        }
+
+        return valid;
+      }
+    </script>
+  </body>
+</html>
