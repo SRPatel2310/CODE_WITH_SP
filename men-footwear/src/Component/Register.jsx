@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -12,14 +12,10 @@ function RegisterPage() {
 
   const handleRegister = (e) => {
     e.preventDefault();
+
     // Storing the user data in localStorage
     localStorage.setItem("user", JSON.stringify(input));
     navigate("/login");
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target; // Extracting name and value from the event
-    setInput({ ...input, [name]: value }); // Dynamically updating the state
   };
 
   return (
@@ -39,9 +35,11 @@ function RegisterPage() {
                 type="text"
                 className="form-control"
                 id="name"
-                name="name" // Added name attribute
+                name="name"
                 value={input.name}
-                onChange={handleChange} // Corrected onChange handler
+                onChange={(e) => {
+                  setInput({ ...input, [e.target.name]: e.target.value });
+                }}
               />
             </div>
             <div className="mb-3">
@@ -52,9 +50,11 @@ function RegisterPage() {
                 type="text"
                 className="form-control"
                 id="username"
-                name="username" // Added name attribute
+                name="username"
                 value={input.username}
-                onChange={handleChange} // Corrected onChange handler
+                onChange={(e) => {
+                  setInput({ ...input, [e.target.name]: e.target.value });
+                }}
               />
             </div>
             <div className="mb-3">
@@ -65,9 +65,11 @@ function RegisterPage() {
                 type="email"
                 className="form-control"
                 id="email"
-                name="email" // Added name attribute
+                name="email"
                 value={input.email}
-                onChange={handleChange} // Corrected onChange handler
+                onChange={(e) => {
+                  setInput({ ...input, [e.target.name]: e.target.value });
+                }}
               />
             </div>
             <div className="mb-3">
@@ -78,14 +80,21 @@ function RegisterPage() {
                 type="password"
                 className="form-control"
                 id="password"
-                name="password" // Added name attribute
+                name="password"
                 value={input.password}
-                onChange={handleChange} // Corrected onChange handler
+                onChange={(e) => {
+                  setInput({ ...input, [e.target.name]: e.target.value });
+                }}
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Register
-            </button>
+            <div className="botton2 d-flex gap-2  align-items-center">
+              <button type="submit" className="btn btn-primary">
+                Register
+              </button>
+              <Link to={"/login"} className=" text-black">
+                I have already Account
+              </Link>
+            </div>
           </form>
         </div>
       </div>
