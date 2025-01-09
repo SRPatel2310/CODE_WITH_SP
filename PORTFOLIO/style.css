@@ -1,0 +1,14 @@
+nav {
+  background-color: #74c69d;
+ 
+}
+
+nav>ul{
+  display: flex; 
+  
+}
+li:hover{
+  background-color: yellow;
+  color: red;
+ 
+}
