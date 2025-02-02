@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#left {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+#lnav {
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#lnavr {
+  display: flex;
+  align-items: center;
+}
+
+#lnavr a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#lnavr i {
+  color: royalblue;
+}
+
+#left #textcenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#left h1 {
+  font-size: 90px;
+}
+
+#left #textcenter p {
+  opacity: 0.6;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#left #textcenter a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* ******* Right Section ******** */
+#right {
+  width: 60%;
+  background-color: white;
+}
+
+#rtop {
+  height: 50%;
+  background-color: orange;
+  display: flex;
+}
+
+#rtopleft {
+  width: 55%;
+  height: 100%;
+  background-color: lightgrey;
+  background-image: url("https://static.scientificamerican.com/sciam/cache/file/68A02F93-F3F9-40C1-8A157B9F77108A85_source.jpg?w=1200");
+  background-position: center;
+  background-size: cover;
+}
+
+#rtopright {
+  width: 45%;
+  height: 100%;
+  background-color: royalblue;
+  background-image: url("https://cdn.shopify.com/s/files/1/0839/2139/files/orange_design_480x480.jpg?v=1704252178");
+  background-position: bottom;
+  background-size: cover;
+}
+
+#rbottom {
+  height: 50%;
+  background-color: lightblue;
+  background-image: url("https://cdn-magazine.nutrabay.com/wp-content/uploads/2024/04/water-splashing-fresh-sliced-oranges-fruit-orange-background-scaled.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 500px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Adjust the left section */
+  #left {
+    width: 100%;
+    height: 50%;
+  }
+
+  /* Adjust the right section */
+  #right {
+    width: 100%;
+    height: 50%;
+    display: flex; /* Make right section a flex container */
+    flex-direction: column; /* Stack right section vertically */
+  }
+
+  /* Adjust the top left and right parts of the right section */
+  #rtopleft,
+  #rtopright {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Adjust the bottom part of the right section */
+  #rbottom {
+    height: 50%;
+  }
+
+  /* Make text bigger for header */
+  #left h1 {
+    font-size: 40px;
+  }
+
+  /* Adjust paragraph font size and line-height */
+  #left #textcenter p {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  /* Adjust the link font size */
+  #left #textcenter a {
+    font-size: 12px;
+  }
+  #left #textcenter h1 {
+    font-size: 20px;
+  }
+  /* Styling adjustments for the icons */
+  #lnav i {
+    font-size: 24px; /* Adjusting icon size for small screens */
+  }
+
+  /* Ensure the links on the left are easier to click */
+  #lnavr a {
+    font-size: 14px; /* Slightly bigger for better readability */
+  }
+}
