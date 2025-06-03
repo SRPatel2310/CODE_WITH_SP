@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Chacker</title>
+  </head>
+  <body style="display: flex; justify-content: center; align-items: center">
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        border-radius: 10px;
+        background-color: lightblue;
+        box-shadow: 5px 4px 2px 2px lightgray;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-items: center;
+        "
+      >
+        <h1>Age Chacker</h1>
+        <form
+          onsubmit="return false"
+          id="ageChackerForm"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            justify-items: center;
+          "
+        >
+          <input
+            style="
+              padding: 6px;
+              border-radius: 5px;
+              outline: none;
+              border: none;
+              border: 1px solid orange;
+            "
+            type="number"
+            id="ageChacker"
+            placeholder="Enter your age"
+            required
+            max="100"
+          /><br />
+
+          <button
+            onclick="agechacker()"
+            style="
+              padding: 6px;
+              border-radius: 5px;
+              outline: none;
+              border: none;
+              background-color: lightcoral;
+            "
+          >
+            Submit
+          </button>
+          <p id="result"></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function agechacker() {
+        const age = document.getElementById("ageChacker");
+        const result = document.getElementById("result");
+        const ageValue = age.value;
+        if (ageValue < 18) {
+          result.innerHTML = "You are not eligible to vote";
+          result.style.color = "red";
+        } else if (ageValue >= 18 && ageValue < 60) {
+          result.innerHTML = "You are eligible to vote";
+          result.style.color = "green";
+        } else if (ageValue >= 60) {
+          result.innerHTML = "You are senior citizen";
+          result.style.color = "blue";
+        }
+      }
+    </script>
+  </body>
+</html>

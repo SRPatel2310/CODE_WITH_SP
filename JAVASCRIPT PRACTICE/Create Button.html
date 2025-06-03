@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Button in js</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      let container = document.getElementById("container");
+      let btn = document.createElement("button");
+      btn.textContent = "Click Me! Now";
+      btn.style.color = "red";
+      btn.style.backgroundColor = "Yellow";
+      container.appendChild(btn);
+    </script>
+  </body>
+</html>
